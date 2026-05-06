@@ -3,7 +3,7 @@
   "name": "Zwei Agent",
   "version": "3.1.0",
   "minAppVersion": "0.15.0",
-  "description": "AI agent for your vault.",
+  "description": "Fully native Agentic AI for Obsidian.md, no terminal/external tools needed.",
   "author": "FoundLegacy",
   "authorUrl": "https://github.com/FoundLegacy",
   "fundingUrl": "https://ko-fi.com/foundlegacy",
