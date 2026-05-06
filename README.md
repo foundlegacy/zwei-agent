@@ -5,6 +5,7 @@ Fully native Agentic AI for your Obsidian vault. Chat with your notes, use tools
 ## Features
 
 - Tool system: read/edit/search/create/delete files and folders, works with .md, .base and .canvas files
+- User confirmation on sensitive tools such as edit/deletion tools, to ensure security
 - AI chat interface inside Obsidian
 - Support for multiple LLM providers (OpenAI, DeepSeek, Anthropic, Gemini, Kimi, etc.)
 - Customizable system prompting and saved prompt templates
