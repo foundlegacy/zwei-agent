@@ -1,9 +1,9 @@
 {
   "id": "zulu-agent",
   "name": "Zulu Agent",
-  "version": "3.3.2",
+  "version": "3.3.3",
   "minAppVersion": "0.15.0",
-  "description": "Fully native Agentic AI for Obsidian.md, no terminal/external tools required.",
+  "description": "Fully native Agentic AI for your notes, no terminal/external tools required.",
   "author": "foundlegacy",
   "authorUrl": "https://github.com/foundlegacy",
   "fundingUrl": "https://ko-fi.com/foundlegacy",
