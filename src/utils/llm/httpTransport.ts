@@ -136,11 +136,11 @@ export async function postStream(
 }
 
 async function loadHttp(): Promise<typeof import('http')> {
-  return import('http') // eslint-disable-line import/no-nodejs-modules
+  return import('http') // required for HTTP transport on desktop via Node.js
 }
 
 async function loadHttps(): Promise<typeof import('https')> {
-  return import('https') // eslint-disable-line import/no-nodejs-modules
+  return import('https') // required for HTTPS transport on desktop via Node.js
 }
 
 async function nodePost(

@@ -58,7 +58,7 @@ export function TemplateSection({ app }: TemplateSectionProps) {
       app,
       plugin,
       selectedSerializedNodes: null,
-      onSubmit: fetchTemplateList,
+      onSubmit: () => { void fetchTemplateList() },
     }).open()
   }, [fetchTemplateList, app, plugin])
 
@@ -68,7 +68,7 @@ export function TemplateSection({ app }: TemplateSectionProps) {
         app,
         plugin,
         templateId: template.id,
-      onSubmit: () => { void fetchTemplateList() },
+        onSubmit: () => { void fetchTemplateList() },
       }).open()
     },
     [fetchTemplateList, app, plugin],

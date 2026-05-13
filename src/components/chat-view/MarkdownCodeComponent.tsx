@@ -94,7 +94,7 @@ export default function MarkdownCodeComponent({
           hasFilename={!!filename}
           wrapLines={wrapLines}
         >
-          {typeof children === 'string' ? children : String(children ?? '')}
+          {typeof children === 'string' ? children : ''}
         </MemoizedSyntaxHighlighterWrapper>
       )}
     </div>
