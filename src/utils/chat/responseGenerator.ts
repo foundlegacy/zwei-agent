@@ -202,7 +202,7 @@ export class ResponseGenerator {
     )
 
     if (assistantWithToolCalls.length > 0 || toolMessages.length > 0) {
-      console.log('[Zwei Agent] Tool message pairing check:', {
+      console.log('[Zulu Agent] Tool message pairing check:', {
         totalMessages: requestMessages.length,
         assistantMessagesWithToolCalls: assistantWithToolCalls.map((m) => ({
           contentPreview: m.content.slice(0, 80),

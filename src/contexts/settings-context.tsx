@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useState } from 'react'
 
-import { ZweiAgentSettings } from '../settings/schema/setting.types'
+import { ZuluAgentSettings } from '../settings/schema/setting.types'
 
 type SettingsContextType = {
-  settings: ZweiAgentSettings
-  setSettings: (newSettings: ZweiAgentSettings) => void | Promise<void>
+  settings: ZuluAgentSettings
+  setSettings: (newSettings: ZuluAgentSettings) => void | Promise<void>
 }
 
 // Settings context
@@ -19,10 +19,10 @@ export const SettingsProvider = ({
   addSettingsChangeListener,
 }: {
   children: React.ReactNode
-  settings: ZweiAgentSettings
-  setSettings: (newSettings: ZweiAgentSettings) => void | Promise<void>
+  settings: ZuluAgentSettings
+  setSettings: (newSettings: ZuluAgentSettings) => void | Promise<void>
   addSettingsChangeListener: (
-    listener: (newSettings: ZweiAgentSettings) => void,
+    listener: (newSettings: ZuluAgentSettings) => void,
   ) => () => void
 }) => {
   const [settingsCached, setSettingsCached] = useState(initialSettings)

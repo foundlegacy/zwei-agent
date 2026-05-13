@@ -2,7 +2,7 @@ import { Coffee, ExternalLink } from 'lucide-react'
 import { App } from 'obsidian'
 import { useState } from 'react'
 
-import ZweiAgentPlugin from '../../main'
+import ZuluAgentPlugin from '../../main'
 
 import { ChatSection } from './sections/ChatSection'
 import { ModelsSection } from './sections/ModelsSection'
@@ -13,7 +13,7 @@ import { ToolsSection } from './sections/ToolsSection'
 
 type SettingsTabRootProps = {
   app: App
-  plugin: ZweiAgentPlugin
+  plugin: ZuluAgentPlugin
 }
 
 const TABS = [
@@ -58,7 +58,7 @@ export function SettingsTabRoot({ app, plugin }: SettingsTabRootProps) {
                   Support this plugin on ko-fi
                 </div>
                 <div className="za-settings-kofi-banner-desc">
-                  If you find Zwei Agent useful, consider buying me a coffee
+                  If you find Zulu Agent useful, consider buying me a coffee
                 </div>
               </div>
               <div className="za-settings-kofi-banner-arrow">

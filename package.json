@@ -1,6 +1,6 @@
 {
-  "name": "zwei-agent",
-  "version": "3.3.1",
+  "name": "zulu-agent",
+  "version": "3.3.2",
   "description": "Agentic AI in Obsidian.md, fully native no terminal/external tools required.",
   "main": "main.js",
   "scripts": {

@@ -2,7 +2,7 @@ import { App, Notice } from 'obsidian'
 import { useState } from 'react'
 
 import { PROVIDER_TYPES_INFO } from '../../../constants'
-import ZweiAgentPlugin from '../../../main'
+import ZuluAgentPlugin from '../../../main'
 import { LLMProvider, LLMProviderType } from '../../../types/provider.types'
 import { ObsidianButton } from '../../../components/common/ObsidianButton'
 import { ObsidianDropdown } from '../../../components/common/ObsidianDropdown'
@@ -11,7 +11,7 @@ import { ObsidianTextInput } from '../../../components/common/ObsidianTextInput'
 import { ReactModal } from '../../../components/common/ReactModal'
 
 type ProviderFormComponentProps = {
-  plugin: ZweiAgentPlugin
+  plugin: ZuluAgentPlugin
   provider?: LLMProvider
   onClose: () => void
 }
@@ -119,7 +119,7 @@ function ProviderFormComponent({
 }
 
 export class AddProviderModal extends ReactModal<ProviderFormComponentProps> {
-  constructor(app: App, plugin: ZweiAgentPlugin) {
+  constructor(app: App, plugin: ZuluAgentPlugin) {
     super({
       app,
       Component: ProviderFormComponent,
@@ -132,7 +132,7 @@ export class AddProviderModal extends ReactModal<ProviderFormComponentProps> {
 }
 
 export class EditProviderModal extends ReactModal<ProviderFormComponentProps> {
-  constructor(app: App, plugin: ZweiAgentPlugin, provider: LLMProvider) {
+  constructor(app: App, plugin: ZuluAgentPlugin, provider: LLMProvider) {
     super({
       app,
       Component: ProviderFormComponent,

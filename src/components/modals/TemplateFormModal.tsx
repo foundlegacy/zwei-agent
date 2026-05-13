@@ -11,8 +11,8 @@ import { SettingsProvider } from '../../contexts/settings-context'
 import { DuplicateTemplateException } from '../../database/json/exception'
 import { TemplateManager } from '../../database/json/template/TemplateManager'
 import { Template } from '../../database/json/template/types'
-import ZweiAgentPlugin from '../../main'
-import { ZweiAgentSettings } from '../../settings/schema/setting.types'
+import ZuluAgentPlugin from '../../main'
+import { ZuluAgentSettings } from '../../settings/schema/setting.types'
 import LexicalContentEditable from '../chat-view/chat-input/LexicalContentEditable'
 import { ObsidianButton } from '../common/ObsidianButton'
 import { ObsidianSetting } from '../common/ObsidianSetting'
@@ -21,7 +21,7 @@ import { ReactModal } from '../common/ReactModal'
 
 type TemplateFormComponentProps = {
   app: App
-  plugin: ZweiAgentPlugin
+  plugin: ZuluAgentPlugin
   selectedSerializedNodes?: BaseSerializedNode[] | null
   templateId?: string
   onSubmit?: () => void
@@ -36,7 +36,7 @@ export class CreateTemplateModal extends ReactModal<TemplateFormComponentProps> 
     onSubmit,
   }: {
     app: App
-    plugin: ZweiAgentPlugin
+    plugin: ZuluAgentPlugin
     selectedSerializedNodes?: BaseSerializedNode[] | null
     onSubmit?: () => void
   }) {
@@ -64,7 +64,7 @@ export class EditTemplateModal extends ReactModal<TemplateFormComponentProps> {
     onSubmit,
   }: {
     app: App
-    plugin: ZweiAgentPlugin
+    plugin: ZuluAgentPlugin
     templateId?: string
     onSubmit?: () => void
   }) {
@@ -132,7 +132,7 @@ function TemplateFormComponent({
         saveTemplates: async (templates: Template[]) => {
           await plugin.setSettings({
             ...plugin.settings,
-            templates: templates as ZweiAgentSettings['templates'],
+            templates: templates as ZuluAgentSettings['templates'],
           })
         },
       }),

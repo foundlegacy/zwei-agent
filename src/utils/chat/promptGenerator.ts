@@ -1,7 +1,7 @@
 import { App, TFile, TFolder, htmlToMarkdown, requestUrl } from 'obsidian'
 
 import { editorStateToPlainText } from '../../components/chat-view/chat-input/utils/editor-state-to-plain-text'
-import { ZweiAgentSettings } from '../../settings/schema/setting.types'
+import { ZuluAgentSettings } from '../../settings/schema/setting.types'
 import {
   ChatAssistantMessage,
   ChatMessage,
@@ -26,10 +26,10 @@ import { YoutubeTranscript, isYoutubeUrl } from './youtube-transcript'
 
 export class PromptGenerator {
   private app: App
-  private settings: ZweiAgentSettings
+  private settings: ZuluAgentSettings
   private MAX_CONTEXT_MESSAGES = 20
 
-  constructor(app: App, settings: ZweiAgentSettings) {
+  constructor(app: App, settings: ZuluAgentSettings) {
     this.app = app
     this.settings = settings
   }
@@ -138,7 +138,7 @@ export class PromptGenerator {
             )
             if (!assistantMessage) {
               console.warn(
-                `[Zwei Agent] Tool message with tool_call_id="${msg.tool_call.id}" has no matching assistant message. Available assistant tool_calls:`,
+                `[Zulu Agent] Tool message with tool_call_id="${msg.tool_call.id}" has no matching assistant message. Available assistant tool_calls:`,
                 requestMessages
                   .filter((rm) => rm.role === 'assistant' && rm.tool_calls)
                   .map((rm) => ({
@@ -305,13 +305,13 @@ ${await this.getWebsiteContent(url)}
           content = await readTFileContent(file, this.app.vault)
         } catch (error) {
           console.error(
-            `[Zwei Agent] Failed to read system prompt file: ${this.settings.systemPromptFilePath}`,
+            `[Zulu Agent] Failed to read system prompt file: ${this.settings.systemPromptFilePath}`,
             error,
           )
         }
       } else {
         console.warn(
-          `[Zwei Agent] System prompt file not found: ${this.settings.systemPromptFilePath}`,
+          `[Zulu Agent] System prompt file not found: ${this.settings.systemPromptFilePath}`,
         )
       }
     }

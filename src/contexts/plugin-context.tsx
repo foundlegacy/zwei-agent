@@ -1,9 +1,9 @@
 import React from 'react'
 
-import ZweiAgentPlugin from '../main'
+import ZuluAgentPlugin from '../main'
 
 // Plugin context
-const PluginContext = React.createContext<ZweiAgentPlugin | undefined>(
+const PluginContext = React.createContext<ZuluAgentPlugin | undefined>(
   undefined,
 )
 
@@ -12,7 +12,7 @@ export const PluginProvider = ({
   plugin,
 }: {
   children: React.ReactNode
-  plugin: ZweiAgentPlugin
+  plugin: ZuluAgentPlugin
 }) => {
   return (
     <PluginContext.Provider value={plugin}>{children}</PluginContext.Provider>

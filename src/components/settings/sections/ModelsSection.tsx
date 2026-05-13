@@ -1,13 +1,13 @@
 import { App } from 'obsidian'
 import React from 'react'
 
-import ZweiAgentPlugin from '../../../main'
+import ZuluAgentPlugin from '../../../main'
 
 import { ChatModelsSubSection } from './models/ChatModelsSubSection'
 
 type ModelsSectionProps = {
   app: App
-  plugin: ZweiAgentPlugin
+  plugin: ZuluAgentPlugin
 }
 
 export function ModelsSection({ app, plugin }: ModelsSectionProps) {

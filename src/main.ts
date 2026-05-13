@@ -4,30 +4,30 @@ import { ChatView } from './ChatView'
 import { ChatProps } from './components/chat-view/Chat'
 import { CHAT_VIEW_TYPE } from './constants'
 import {
-  ZweiAgentSettings,
-  zweiAgentSettingsSchema,
+  ZuluAgentSettings,
+  zuluAgentSettingsSchema,
 } from './settings/schema/setting.types'
-import { parseZweiAgentSettings } from './settings/schema/settings'
-import { ZweiAgentSettingTab } from './settings/SettingTab'
+import { parseZuluAgentSettings } from './settings/schema/settings'
+import { ZuluAgentSettingTab } from './settings/SettingTab'
 import { getMentionableBlockData } from './utils/obsidian'
 
-export default class ZweiAgentPlugin extends Plugin {
-  settings: ZweiAgentSettings
+export default class ZuluAgentPlugin extends Plugin {
+  settings: ZuluAgentSettings
   initialChatProps?: ChatProps
-  settingsChangeListeners: ((newSettings: ZweiAgentSettings) => void)[] = []
+  settingsChangeListeners: ((newSettings: ZuluAgentSettings) => void)[] = []
 
   async onload() {
     try {
       await this.loadSettings()
     } catch (error) {
-      console.error('[Zwei Agent] Failed to load settings, using defaults:', error)
-      this.settings = parseZweiAgentSettings({})
+      console.error('[Zulu Agent] Failed to load settings, using defaults:', error)
+      this.settings = parseZuluAgentSettings({})
       await this.saveData(this.settings)
     }
 
     this.registerView(CHAT_VIEW_TYPE, (leaf) => new ChatView(leaf, this))
 
-    this.addRibbonIcon('cog', 'Open Zwei Agent', () =>
+    this.addRibbonIcon('cog', 'Open Zulu Agent', () =>
       this.openChatView(),
     )
 
@@ -45,17 +45,17 @@ export default class ZweiAgentPlugin extends Plugin {
       },
     })
 
-    this.addSettingTab(new ZweiAgentSettingTab(this.app, this))
+    this.addSettingTab(new ZuluAgentSettingTab(this.app, this))
   }
 
   onunload() {}
 
   async loadSettings() {
-    this.settings = parseZweiAgentSettings(await this.loadData())
+    this.settings = parseZuluAgentSettings(await this.loadData())
   }
 
-  async setSettings(newSettings: ZweiAgentSettings) {
-    const validationResult = zweiAgentSettingsSchema.safeParse(newSettings)
+  async setSettings(newSettings: ZuluAgentSettings) {
+    const validationResult = zuluAgentSettingsSchema.safeParse(newSettings)
 
     if (!validationResult.success) {
       new Notice(`Invalid settings:
@@ -69,7 +69,7 @@ ${validationResult.error.issues.map((v) => v.message).join('\n')}`)
   }
 
   addSettingsChangeListener(
-    listener: (newSettings: ZweiAgentSettings) => void,
+    listener: (newSettings: ZuluAgentSettings) => void,
   ) {
     this.settingsChangeListeners.push(listener)
     return () => {

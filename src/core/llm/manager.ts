@@ -1,4 +1,4 @@
-import { ZweiAgentSettings } from '../../settings/schema/setting.types'
+import { ZuluAgentSettings } from '../../settings/schema/setting.types'
 import { ChatModel } from '../../types/chat-model.types'
 import { LLMProvider } from '../../types/provider.types'
 
@@ -14,8 +14,8 @@ export function getProviderClient({
 }: {
   providerId: string
   model?: ChatModel
-  settings: ZweiAgentSettings
-  setSettings?: (newSettings: ZweiAgentSettings) => void | Promise<void>
+  settings: ZuluAgentSettings
+  setSettings?: (newSettings: ZuluAgentSettings) => void | Promise<void>
 }): BaseLLMProvider<LLMProvider> {
   const provider = settings.providers.find((p) => p.id === providerId)
   if (!provider) {
@@ -46,8 +46,8 @@ export function getChatModelClient({
   setSettings,
 }: {
   modelId: string
-  settings: ZweiAgentSettings
-  setSettings: (newSettings: ZweiAgentSettings) => void | Promise<void>
+  settings: ZuluAgentSettings
+  setSettings: (newSettings: ZuluAgentSettings) => void | Promise<void>
 }): {
   providerClient: BaseLLMProvider<LLMProvider>
   model: ChatModel

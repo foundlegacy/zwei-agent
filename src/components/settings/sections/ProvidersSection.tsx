@@ -7,7 +7,7 @@ import {
   PROVIDER_TYPES_INFO,
 } from '../../../constants'
 import { useSettings } from '../../../contexts/settings-context'
-import ZweiAgentPlugin from '../../../main'
+import ZuluAgentPlugin from '../../../main'
 import { LLMProvider, LLMProviderType } from '../../../types/provider.types'
 import { ConfirmModal } from '../../modals/ConfirmModal'
 import {
@@ -17,7 +17,7 @@ import {
 
 type ProvidersSectionProps = {
   app: App
-  plugin: ZweiAgentPlugin
+  plugin: ZuluAgentPlugin
 }
 
 export function ProvidersSection({ app, plugin }: ProvidersSectionProps) {

@@ -2,7 +2,7 @@ import { App, Notice } from 'obsidian'
 import { useState } from 'react'
 
 import { PROVIDER_TYPES_INFO } from '../../../constants'
-import ZweiAgentPlugin from '../../../main'
+import ZuluAgentPlugin from '../../../main'
 import { ChatModel } from '../../../types/chat-model.types'
 import { LLMProviderType } from '../../../types/provider.types'
 import { ObsidianButton } from '../../../components/common/ObsidianButton'
@@ -12,7 +12,7 @@ import { ObsidianTextInput } from '../../../components/common/ObsidianTextInput'
 import { ReactModal } from '../../../components/common/ReactModal'
 
 type AddChatModelComponentProps = {
-  plugin: ZweiAgentPlugin
+  plugin: ZuluAgentPlugin
   onClose: () => void
 }
 
@@ -121,7 +121,7 @@ function AddChatModelComponent({ plugin, onClose }: AddChatModelComponentProps) 
 }
 
 export class AddChatModelModal extends ReactModal<AddChatModelComponentProps> {
-  constructor(app: App, plugin: ZweiAgentPlugin) {
+  constructor(app: App, plugin: ZuluAgentPlugin) {
     super({
       app,
       Component: AddChatModelComponent,

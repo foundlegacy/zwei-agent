@@ -5,12 +5,12 @@ import { Root, createRoot } from 'react-dom/client'
 import { AppProvider } from '../../contexts/app-context'
 import { PluginProvider } from '../../contexts/plugin-context'
 import { SettingsProvider } from '../../contexts/settings-context'
-import ZweiAgentPlugin from '../../main'
+import ZuluAgentPlugin from '../../main'
 import { TemplateSection } from '../settings/sections/TemplateSection'
 
 type TemplateSectionModalProps = {
   app: App
-  plugin: ZweiAgentPlugin
+  plugin: ZuluAgentPlugin
 }
 
 function TemplateSectionWrapper({
@@ -36,9 +36,9 @@ function TemplateSectionWrapper({
 
 export class TemplateSectionModal extends Modal {
   private root: Root | null = null
-  private plugin: ZweiAgentPlugin
+  private plugin: ZuluAgentPlugin
 
-  constructor(app: App, plugin: ZweiAgentPlugin) {
+  constructor(app: App, plugin: ZuluAgentPlugin) {
     super(app)
     this.plugin = plugin
   }

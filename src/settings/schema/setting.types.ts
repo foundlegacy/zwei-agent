@@ -12,7 +12,7 @@ import { llmProviderSchema } from '../../types/provider.types'
  * Settings
  */
 
-export const zweiAgentSettingsSchema = z.object({
+export const zuluAgentSettingsSchema = z.object({
   providers: z.array(llmProviderSchema).catch([...DEFAULT_PROVIDERS]),
 
   chatModels: z.array(chatModelSchema).catch([...DEFAULT_CHAT_MODELS]),
@@ -85,4 +85,4 @@ export const zweiAgentSettingsSchema = z.object({
     )
     .catch([]),
 })
-export type ZweiAgentSettings = z.infer<typeof zweiAgentSettingsSchema>
+export type ZuluAgentSettings = z.infer<typeof zuluAgentSettingsSchema>

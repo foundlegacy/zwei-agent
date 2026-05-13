@@ -1,7 +1,7 @@
 {
-  "id": "zwei-agent",
-  "name": "Zwei Agent",
-  "version": "3.3.1",
+  "id": "zulu-agent",
+  "name": "Zulu Agent",
+  "version": "3.3.2",
   "minAppVersion": "0.15.0",
   "description": "Fully native Agentic AI for Obsidian.md, no terminal/external tools required.",
   "author": "foundlegacy",

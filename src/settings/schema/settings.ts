@@ -1,15 +1,15 @@
 import {
-  ZweiAgentSettings,
-  zweiAgentSettingsSchema,
+  ZuluAgentSettings,
+  zuluAgentSettingsSchema,
 } from './setting.types'
 
-export function parseZweiAgentSettings(
+export function parseZuluAgentSettings(
   data: unknown,
-): ZweiAgentSettings {
+): ZuluAgentSettings {
   try {
-    return zweiAgentSettingsSchema.parse(data)
+    return zuluAgentSettingsSchema.parse(data)
   } catch (error) {
     console.warn('Invalid settings provided, using defaults:', error)
-    return zweiAgentSettingsSchema.parse({})
+    return zuluAgentSettingsSchema.parse({})
   }
 }

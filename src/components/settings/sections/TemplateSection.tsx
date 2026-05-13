@@ -6,7 +6,7 @@ import { useSettings } from '../../../contexts/settings-context'
 import { usePlugin } from '../../../contexts/plugin-context'
 import { TemplateManager } from '../../../database/json/template/TemplateManager'
 import { Template, TemplateMetadata } from '../../../database/json/template/types'
-import { ZweiAgentSettings } from '../../../settings/schema/setting.types'
+import { ZuluAgentSettings } from '../../../settings/schema/setting.types'
 import { ObsidianButton } from '../../common/ObsidianButton'
 import { ConfirmModal } from '../../modals/ConfirmModal'
 import {
@@ -28,7 +28,7 @@ export function TemplateSection({ app }: TemplateSectionProps) {
         saveTemplates: async (templates: Template[]) => {
           await setSettings({
             ...settings,
-            templates: templates as ZweiAgentSettings['templates'],
+            templates: templates as ZuluAgentSettings['templates'],
           })
         },
       }),

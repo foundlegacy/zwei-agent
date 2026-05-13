@@ -6,7 +6,7 @@ import { ChatManager } from '../database/json/chat/ChatManager'
 import { ChatConversation } from '../database/json/chat/types'
 import { TemplateManager } from '../database/json/template/TemplateManager'
 import { Template } from '../database/json/template/types'
-import { ZweiAgentSettings } from '../settings/schema/setting.types'
+import { ZuluAgentSettings } from '../settings/schema/setting.types'
 
 export function useTemplateManager() {
   const app = useApp()
@@ -18,7 +18,7 @@ export function useTemplateManager() {
         saveTemplates: async (templates: Template[]) => {
           await setSettings({
             ...settings,
-            templates: templates as ZweiAgentSettings['templates'],
+            templates: templates as ZuluAgentSettings['templates'],
           })
         },
       }),
@@ -37,7 +37,7 @@ export function useChatManager() {
           await setSettings({
             ...settings,
             chatHistories:
-              histories as ZweiAgentSettings['chatHistories'],
+              histories as ZuluAgentSettings['chatHistories'],
           })
         },
       }),

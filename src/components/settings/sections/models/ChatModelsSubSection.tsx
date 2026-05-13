@@ -4,7 +4,7 @@ import { ObsidianToggle } from 'src/components/common/ObsidianToggle'
 
 import { DEFAULT_CHAT_MODELS } from '../../../../constants'
 import { useSettings } from '../../../../contexts/settings-context'
-import ZweiAgentPlugin from '../../../../main'
+import ZuluAgentPlugin from '../../../../main'
 import { ConfirmModal } from '../../../modals/ConfirmModal'
 import { AddChatModelModal } from '../../modals/AddChatModelModal'
 
@@ -15,7 +15,7 @@ import {
 
 type ChatModelsSubSectionProps = {
   app: App
-  plugin: ZweiAgentPlugin
+  plugin: ZuluAgentPlugin
 }
 
 const isEnabled = (enable: boolean | undefined | null) => enable ?? true

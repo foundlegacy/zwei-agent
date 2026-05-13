@@ -4,13 +4,13 @@ import { Root, createRoot } from 'react-dom/client'
 import { SettingsTabRoot } from '../components/settings/SettingsTabRoot'
 import { PluginProvider } from '../contexts/plugin-context'
 import { SettingsProvider } from '../contexts/settings-context'
-import ZweiAgentPlugin from '../main'
+import ZuluAgentPlugin from '../main'
 
-export class ZweiAgentSettingTab extends PluginSettingTab {
-  plugin: ZweiAgentPlugin
+export class ZuluAgentSettingTab extends PluginSettingTab {
+  plugin: ZuluAgentPlugin
   private root: Root | null = null
 
-  constructor(app: App, plugin: ZweiAgentPlugin) {
+  constructor(app: App, plugin: ZuluAgentPlugin) {
     super(app, plugin)
     this.plugin = plugin
   }

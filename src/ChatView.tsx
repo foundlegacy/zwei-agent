@@ -11,7 +11,7 @@ import { DarkModeProvider } from './contexts/dark-mode-context'
 import { DialogContainerProvider } from './contexts/dialog-container-context'
 import { PluginProvider } from './contexts/plugin-context'
 import { SettingsProvider } from './contexts/settings-context'
-import ZweiAgentPlugin from './main'
+import ZuluAgentPlugin from './main'
 import { MentionableBlockData } from './types/mentionable'
 
 export class ChatView extends ItemView {
@@ -21,7 +21,7 @@ export class ChatView extends ItemView {
 
   constructor(
     leaf: WorkspaceLeaf,
-    private plugin: ZweiAgentPlugin,
+    private plugin: ZuluAgentPlugin,
   ) {
     super(leaf)
     this.initialChatProps = plugin.initialChatProps
@@ -36,7 +36,7 @@ export class ChatView extends ItemView {
   }
 
   getDisplayText() {
-    return 'Zwei Agent'
+    return 'Zulu Agent'
   }
 
   async onOpen() {
