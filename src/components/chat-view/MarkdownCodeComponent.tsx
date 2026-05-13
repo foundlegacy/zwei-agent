@@ -27,7 +27,8 @@ export default function MarkdownCodeComponent({
   }, [language])
 
   const handleCopy = () => {
-    void navigator.clipboard.writeText(String(children)).then(() => {
+    const textContent = typeof children === 'string' ? children : ''
+    void navigator.clipboard.writeText(textContent).then(() => {
       setCopied(true)
       window.setTimeout(() => setCopied(false), 2000)
     }).catch((err) => {
@@ -84,7 +85,7 @@ export default function MarkdownCodeComponent({
       </div>
       {isPreviewMode ? (
         <div className="za-code-block-obsidian-markdown">
-          <ObsidianMarkdown content={String(children)} scale="sm" />
+          <ObsidianMarkdown content={typeof children === 'string' ? children : ''} scale="sm" />
         </div>
       ) : (
         <MemoizedSyntaxHighlighterWrapper
@@ -93,7 +94,7 @@ export default function MarkdownCodeComponent({
           hasFilename={!!filename}
           wrapLines={wrapLines}
         >
-          {String(children)}
+          {typeof children === 'string' ? children : String(children ?? '')}
         </MemoizedSyntaxHighlighterWrapper>
       )}
     </div>

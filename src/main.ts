@@ -109,7 +109,7 @@ ${validationResult.error.issues.map((v) => v.message).join('\n')}`)
       leaf.view.openNewChat(chatProps?.selectedBlock)
     }
 
-    this.app.workspace.revealLeaf(
+    void this.app.workspace.revealLeaf(
       this.app.workspace.getLeavesOfType(CHAT_VIEW_TYPE)[0],
     )
   }

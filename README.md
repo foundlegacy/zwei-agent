@@ -14,20 +14,6 @@ As of 3.3.0:
 - Vault structure context / native system prompt / current open file context.
 - Prompt saving (templates).
 
-## Installation
-
-### BRAT install (recommended)
-
-1. Install the BRAT plug-in from the external plug-ins page of obsidian settings
-2. Click 'Add beta plug-in' in the BRAT settings and paste `https://github.com/foundlegacy/zulu-agent` as the plug-in source
-3. Enable the plugin in Obsidian Settings → Community Plugins
-
-### Manual Installation
-
-1. Download the latest release from [Releases](https://github.com/foundlegacy/zulu-agent/releases)
-2. Extract into your vault's `.obsidian/plugins/zulu-agent/` folder
-3. Enable the plugin in Obsidian Settings → Community Plugins
-
 ## Configuration
 
 1. Open Settings → Zulu Agent

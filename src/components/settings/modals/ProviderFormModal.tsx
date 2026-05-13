@@ -53,7 +53,7 @@ function ProviderFormComponent({
     await plugin.setSettings({
       ...settings,
       providers: isEditing
-        ? settings.providers.map((p) => (p.id === provider!.id ? newProvider : p))
+        ?         settings.providers.map((p) => (p.id === provider.id ? newProvider : p))
         : [...settings.providers, newProvider],
     })
 

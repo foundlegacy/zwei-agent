@@ -562,7 +562,7 @@ const Chat = forwardRef<ChatRef, ChatProps>((props, ref) => {
                     : messageOrGroup,
                 )}
               conversationId={currentConversationId}
-              onToolMessageUpdate={handleToolMessageUpdate}
+              onToolMessageUpdate={(msg) => { void handleToolMessageUpdate(msg) }}
               toolManager={toolManager}
             />
           ),

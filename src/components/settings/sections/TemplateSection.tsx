@@ -68,7 +68,7 @@ export function TemplateSection({ app }: TemplateSectionProps) {
         app,
         plugin,
         templateId: template.id,
-        onSubmit: fetchTemplateList,
+      onSubmit: () => { void fetchTemplateList() },
       }).open()
     },
     [fetchTemplateList, app, plugin],
@@ -83,7 +83,7 @@ export function TemplateSection({ app }: TemplateSectionProps) {
         ctaText: 'Delete',
         onConfirm: () => {
           void templateManager.deleteTemplate(template.id).then(() => {
-            fetchTemplateList()
+            void fetchTemplateList()
           }).catch((error: Error) => {
             console.error('Failed to delete saved prompt:', error)
             new Notice('Failed to delete saved prompt. Please try again.')

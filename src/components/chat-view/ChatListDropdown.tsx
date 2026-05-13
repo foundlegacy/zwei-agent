@@ -93,9 +93,9 @@ function ChatListItem({
           <Pencil />
         </button>
         <button
-          onClick={async (e) => {
+          onClick={(e) => {
             e.stopPropagation()
-            await onDelete()
+            void onDelete()
           }}
         >
           <Trash2 />

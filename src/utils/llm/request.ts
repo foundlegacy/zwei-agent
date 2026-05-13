@@ -1,5 +1,9 @@
 import { ContentPart, RequestMessage } from '../../types/llm/request'
 
+function isTextContent(part: ContentPart): part is { type: 'text'; text: string } {
+  return part.type === 'text'
+}
+
 /**
  * Concatenates message contents, handling both string and ContentPart[] formats.
  * Returns either a string or ContentPart[] depending on the message role.
@@ -20,7 +24,7 @@ function concatenateMessageContent(
   const merged = [...prevParts, ...currParts].filter(
     (part) => !(part.type === 'text' && part.text.trim().length === 0),
   )
-  if (merged.every((part) => part.type === 'text')) {
+  if (merged.every(isTextContent)) {
     return merged.map((part) => part.text).join('\n\n')
   }
   return merged

@@ -807,8 +807,7 @@ input[type='text'].za-chat-list-dropdown-item-title-input {
 .za-llm-info-tokens-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: var(--size-4-5);
-  row-gap: var(--size-4-2);
+  gap: var(--size-4-2) var(--size-4-5);
   font-size: var(--font-ui-small);
 }
 

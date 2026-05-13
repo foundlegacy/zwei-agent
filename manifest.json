@@ -1,7 +1,7 @@
 {
   "id": "zulu-agent",
   "name": "Zulu Agent",
-  "version": "3.3.5",
+  "version": "3.3.6",
   "minAppVersion": "1.7.2",
   "description": "Fully native Agentic AI for your notes, no terminal/external tools required.",
   "author": "foundlegacy",

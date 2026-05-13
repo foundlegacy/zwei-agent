@@ -220,7 +220,7 @@ function TemplateFormComponent({
       }
     }
     if (templateId) {
-      fetchExistingTemplate(templateId)
+      void fetchExistingTemplate(templateId)
     }
 
     return () => {

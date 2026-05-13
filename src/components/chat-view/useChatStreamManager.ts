@@ -68,7 +68,7 @@ export function useChatStreamManager({
           throw error
         }
         const firstChatModel = settings.chatModels[0]
-        setSettings({
+        void setSettings({
           ...settings,
           chatModelId: firstChatModel.id,
           chatModels: settings.chatModels.map((model) =>

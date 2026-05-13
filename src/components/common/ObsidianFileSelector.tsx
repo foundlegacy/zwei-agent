@@ -50,7 +50,7 @@ export function ObsidianFileSelector({
         setOpen(false)
       }
     }
-    const rootDocument = (typeof activeDocument !== 'undefined' ? activeDocument : document)
+    const rootDocument = activeDocument
     rootDocument.addEventListener('mousedown', handler)
     return () => rootDocument.removeEventListener('mousedown', handler)
   }, [open])

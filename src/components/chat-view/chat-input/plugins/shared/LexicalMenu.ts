@@ -12,7 +12,7 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { mergeRegister } from '@lexical/utils'
 
 function getActiveBody(): HTMLElement {
-  return typeof activeDocument !== 'undefined' ? activeDocument.body : (typeof document !== 'undefined' ? document.body : {} as HTMLElement)
+  return activeDocument.body
 }
 import {
   $getSelection,
@@ -61,7 +61,7 @@ export class MenuOption {
   constructor(key: string) {
     this.key = key
     this.ref = { current: null }
-    this.setRefElement = this.setRefElement.bind(this)
+    this.setRefElement = this.setRefElement.bind(this) as typeof this.setRefElement
   }
 
   setRefElement(element: HTMLElement | null) {
@@ -81,7 +81,7 @@ export type MenuRenderFn<TOption extends MenuOption> = (
 ) => ReactPortal | React.JSX.Element | null
 
 const scrollIntoViewIfNeeded = (target: HTMLElement) => {
-  const typeaheadContainerNode = getActiveBody().querySelector('#typeahead-menu') as HTMLElement | null
+  const typeaheadContainerNode = getActiveBody().querySelector('#typeahead-menu')
   if (!typeaheadContainerNode) {
     return
   }
@@ -240,7 +240,7 @@ export function useDynamicPositioning(
       const resizeObserver = new ResizeObserver(onReposition)
       const respositionHandler = () => { onReposition() }
       window.addEventListener('resize', respositionHandler)
-      const rootDocument = getActiveBody().ownerDocument ?? document
+      const rootDocument = getActiveBody().ownerDocument
       rootDocument.addEventListener('scroll', handleScroll, {
         capture: true,
         passive: true,
@@ -492,7 +492,7 @@ export function useMenuAnchorRef(
 ): MutableRefObject<HTMLElement> {
   const [editor] = useLexicalComposerContext()
   const anchorElementRef = useRef<HTMLElement>(
-    (typeof activeDocument !== 'undefined' ? activeDocument : document).createElement('div'),
+    activeDocument.createElement('div'),
   )
   const positionMenu = useCallback(() => {
     anchorElementRef.current.style.top = anchorElementRef.current.style.bottom

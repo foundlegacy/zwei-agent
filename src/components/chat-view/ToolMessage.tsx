@@ -177,7 +177,7 @@ function ToolCallItem({
           )}
           {response.status === ToolCallResponseStatus.Running && (
             <div className="za-toolcall-footer-actions">
-              <button className="za-toolcall-btn za-toolcall-btn-abort" onClick={handleAbort}>Abort</button>
+              <button className="za-toolcall-btn za-toolcall-btn-abort" onClick={() => { void handleAbort() }}>Abort</button>
             </div>
           )}
         </div>

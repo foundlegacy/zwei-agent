@@ -50,7 +50,7 @@ function $convertMentionElement(
   if (textContent !== null) {
     const node = $createMentionNode(
       mentionName,
-      mentionable as SerializedMentionable,
+      mentionable,
     )
     return {
       node,
@@ -111,7 +111,7 @@ export class MentionNode extends TextNode {
   }
 
   exportDOM(): DOMExportOutput {
-    const element = (typeof activeDocument !== 'undefined' ? activeDocument : document).createElement('span')
+    const element = activeDocument.createElement('span')
     element.setAttribute(MENTION_NODE_ATTRIBUTE, 'true')
     element.setAttribute(
       MENTION_NODE_MENTION_NAME_ATTRIBUTE,

@@ -117,7 +117,7 @@ export function openMarkdownFile(
     }
   } else {
     const leaf = app.workspace.getLeaf('tab')
-    leaf.openFile(file, {
+    void leaf.openFile(file, {
       eState: startLine ? { line: startLine - 1 } : undefined, // -1 because line is 0-indexed
     })
   }

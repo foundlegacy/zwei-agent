@@ -29,14 +29,14 @@ function debounce<T extends (...args: unknown[]) => Promise<void>>(
   delay: number,
   options?: { maxWait?: number },
 ): T {
-  let timer: ReturnType<typeof setTimeout> | null = null
-  let maxTimer: ReturnType<typeof setTimeout> | null = null
+  let timer: number | null = null
+  let maxTimer: number | null = null
 
   const debounced = function (this: unknown, ...args: unknown[]) {
     if (maxTimer === null && options?.maxWait) {
-      maxTimer = setTimeout(() => {
+      maxTimer = window.setTimeout(() => {
         if (timer !== null) {
-          clearTimeout(timer)
+          window.clearTimeout(timer)
           timer = null
         }
         maxTimer = null
@@ -44,11 +44,11 @@ function debounce<T extends (...args: unknown[]) => Promise<void>>(
       }, options.maxWait)
     }
     if (timer !== null) {
-      clearTimeout(timer)
+      window.clearTimeout(timer)
     }
-    timer = setTimeout(() => {
+    timer = window.setTimeout(() => {
       if (maxTimer !== null) {
-        clearTimeout(maxTimer)
+        window.clearTimeout(maxTimer)
         maxTimer = null
       }
       timer = null
@@ -94,11 +94,12 @@ export function useChatHistory(): UseChatHistory {
             })
           } else {
             const firstUserMessage = messages.find((v) => v.role === 'user')
+            const content = firstUserMessage?.content
 
             await chatManager.createChat({
               id,
-              title: firstUserMessage?.content
-                ? editorStateToPlainText(firstUserMessage.content).substring(
+              title: content
+                ? editorStateToPlainText(content).substring(
                     0,
                     50,
                   )
