@@ -1,6 +1,6 @@
 {
-  "name": "zwei-agent-obsidian",
-  "version": "3.3.0",
+  "name": "zwei-agent",
+  "version": "3.3.1",
   "description": "Agentic AI in Obsidian.md, fully native no terminal/external tools required.",
   "main": "main.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "type:check": "tsc --noEmit"
   },
   "keywords": [],
-  "author": "FoundLegacy",
+  "author": "foundlegacy",
   "license": "MIT",
   "devDependencies": {
     "@types/lodash.debounce": "^4.0.9",

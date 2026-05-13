@@ -57,7 +57,7 @@ function ErrorModalComponent({
             onClick={() => {
               onClose()
               window.open(
-                'https://github.com/glowingjade/zwei-agent-obsidian/issues',
+                'https://github.com/foundlegacy/zwei-agent/issues',
                 '_blank',
               )
             }}
@@ -73,7 +73,7 @@ function ErrorModalComponent({
               // @ts-expect-error: setting property exists in Obsidian's App but is not typed
               app.setting.open()
               // @ts-expect-error: setting property exists in Obsidian's App but is not typed
-              app.setting.openTabById('zwei-agent-obsidian')
+              app.setting.openTabById('zwei-agent')
             }}
           >
             Open Settings

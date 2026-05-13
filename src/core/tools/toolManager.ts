@@ -27,7 +27,7 @@ const BUILTIN_TOOLS: Tool[] = [
   {
     name: 'read_vault_file',
     description:
-      "Read a file from the vault. Use sparingly — large files cost many tokens. Path is relative to vault root (e.g., \"Notes/My Note.md\").",
+      "Read a file from the vault (.md, .base, .canvas only). Use sparingly — large files cost many tokens. Path is relative to vault root (e.g., \"Notes/My Note.md\").",
     inputSchema: {
       type: 'object',
       properties: {
@@ -66,7 +66,7 @@ const BUILTIN_TOOLS: Tool[] = [
   {
     name: 'search_vault',
     description:
-      'Search all vault files for a word or phrase. Returns file paths and matching line numbers. Prefer search_files when you know the target files.',
+      'Search all .md, .base, .canvas vault files for a word or phrase. Returns file paths and matching line numbers. Prefer search_files when you know the target files.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -85,7 +85,7 @@ const BUILTIN_TOOLS: Tool[] = [
   {
     name: 'search_files',
     description:
-      'Search specific files for a word or phrase. Use when you know which files to search. Returns matching line numbers per file.',
+      'Search specific .md, .base, .canvas vault files for a word or phrase. Use when you know which files to search. Returns matching line numbers per file.',
     inputSchema: {
       type: 'object',
       properties: {

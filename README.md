@@ -19,13 +19,13 @@ As of 3.3.0:
 ### BRAT install (recommended)
 
 1. Install the BRAT plug-in from the external plug-ins page of obsidian settings
-2. Click 'Add beta plug-in' in the BRAT settings and paste `https://github.com/FoundLegacy/zwei-agent-obsidian` as the plug-in source
+2. Click 'Add beta plug-in' in the BRAT settings and paste `https://github.com/foundlegacy/zwei-agent` as the plug-in source
 3. Enable the plugin in Obsidian Settings → Community Plugins
 
 ### Manual Installation
 
-1. Download the latest release from [Releases](https://github.com/FoundLegacy/zwei-agent-obsidian/releases)
-2. Extract into your vault's `.obsidian/plugins/zwei-agent-obsidian/` folder
+1. Download the latest release from [Releases](https://github.com/foundlegacy/zwei-agent/releases)
+2. Extract into your vault's `.obsidian/plugins/zwei-agent/` folder
 3. Enable the plugin in Obsidian Settings → Community Plugins
 
 ## Configuration
@@ -40,17 +40,17 @@ As of 3.3.0:
 
 ```bash
 # Clone the repository
-git clone https://github.com/FoundLegacy/zwei-agent-obsidian.git
+git clone https://github.com/foundlegacy/zwei-agent.git
 
 # Install dependencies
-cd zwei-agent-obsidian
+cd zwei-agent
 npm install
 
 # Build
 npm run build
 
 # Copy to your vault for testing
-cp main.js styles.css manifest.json /path/to/vault/.obsidian/plugins/zwei-agent-obsidian/
+cp main.js styles.css manifest.json /path/to/vault/.obsidian/plugins/zwei-agent/
 
 # Or use dev mode with hot reload (requires the Hot Reload community plugin)
 npm run dev
@@ -64,4 +64,4 @@ If you find Zwei Agent useful, consider supporting development:
 
 ## License
 
-MIT © [FoundLegacy](https://github.com/FoundLegacy)
+MIT © [foundlegacy](https://github.com/foundlegacy)
